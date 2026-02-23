@@ -46,7 +46,7 @@ const CONFIG: LeadPageConfig = {
   faqSubtitle: 'Everything you need to know about selling or renting property in Calvia, Mallorca.',
   faqs: sellerFaqs,
   faqSchemaId: 'seller',
-  blogSlugs: ['short-term-renting-calvia', 'new-developments-calvia-mallorca', 'best-agencies-notaries-calvia'],
+  blogSlugs: ['short-term-renting-regulations-guide', 'new-developments-calvia-guide', 'agencies-notaries-calvia-guide'],
   pageMeta: {
     title: 'Sell or Rent Property in Calvia, Mallorca | Home Owner Matching | Calvia Real Estate',
     description: 'Selling or renting property in Calvia, Mallorca? Get matched to the best local estate agencies for your property type and price range. Villas, apartments, fincas -- expert agents who know the market.',

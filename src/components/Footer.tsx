@@ -56,12 +56,12 @@ export default function Footer({ navigate }: FooterProps) {
             <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-4">Popular Guides</h4>
             <ul className="space-y-2.5">
               <li>
-                <a href="#/blog/lex-beckham-ruling-mallorca" onClick={handleNav('/blog/lex-beckham-ruling-mallorca')} className="text-sm text-white/60 hover:text-white transition-colors">
+                <a href="#/blog/lex-beckham-ruling-guide" onClick={handleNav('/blog/lex-beckham-ruling-guide')} className="text-sm text-white/60 hover:text-white transition-colors">
                   Lex Beckham Tax Regime
                 </a>
               </li>
               <li>
-                <a href="#/blog/buying-property-bendinat-guide" onClick={handleNav('/blog/buying-property-bendinat-guide')} className="text-sm text-white/60 hover:text-white transition-colors">
+                <a href="#/blog/bendinat-real-estate-guide" onClick={handleNav('/blog/bendinat-real-estate-guide')} className="text-sm text-white/60 hover:text-white transition-colors">
                   Buying in Bendinat
                 </a>
               </li>

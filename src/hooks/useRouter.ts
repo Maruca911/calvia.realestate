@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export type Route = '/' | '/buyers' | '/sellers' | '/thank-you' | '/blog' | `/blog/${string}`;
+export type Route = '/' | '/buyers' | '/sellers' | '/thank-you' | '/thank-you/buyer' | '/thank-you/seller' | '/blog' | `/blog/${string}`;
 
-const STATIC_ROUTES = ['/', '/buyers', '/sellers', '/thank-you', '/blog'];
+const STATIC_ROUTES = ['/', '/buyers', '/sellers', '/thank-you', '/thank-you/buyer', '/thank-you/seller', '/blog'];
 
 function getRouteFromHash(): Route {
   const hash = window.location.hash.slice(1) || '/';

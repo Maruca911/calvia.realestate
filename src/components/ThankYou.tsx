@@ -6,8 +6,28 @@ import type { Route } from '../hooks/useRouter';
 
 interface ThankYouProps {
   refCode: string;
+  leadType: 'buyer' | 'seller';
   navigate: (to: Route) => void;
 }
+
+const LEAD_CONTENT = {
+  buyer: {
+    heading: 'Thank You \u2014 Your Property Match is on the Way!',
+    subtitle: 'Our team is already working to find the best agencies for your property search.',
+    step2: 'Our team reviews your criteria and matches you to 2\u20133 specialist agencies in your preferred area.',
+    step3: 'Expect a personalised agency introduction via email or phone within 48 hours.',
+    consultCta: 'Book Free Property Consultation',
+    whatsappMsg: (code: string) => `Hi, I just submitted a buyer enquiry on Calvia Real Estate. My reference code is ${code}.`,
+  },
+  seller: {
+    heading: 'Thank You \u2014 Your Listing Match is on the Way!',
+    subtitle: 'Our team is already identifying the best agencies to market your property.',
+    step2: 'Our team evaluates your property details and matches you to agencies with active buyer demand in your area and price bracket.',
+    step3: 'Expect a personalised agency introduction and valuation discussion within 48 hours.',
+    consultCta: 'Book Free Valuation Strategy Call',
+    whatsappMsg: (code: string) => `Hi, I just submitted a seller enquiry on Calvia Real Estate. My reference code is ${code}.`,
+  },
+} as const;
 
 function CountdownTimer() {
   const [seconds, setSeconds] = useState(24 * 60 * 60);
@@ -43,11 +63,12 @@ function CountdownTimer() {
   );
 }
 
-export default function ThankYou({ refCode, navigate }: ThankYouProps) {
+export default function ThankYou({ refCode, leadType, navigate }: ThankYouProps) {
   const [copied, setCopied] = useState(false);
+  const content = LEAD_CONTENT[leadType];
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hi, I just submitted a lead on Calvia Real Estate. My reference code is ${refCode}.`
+    content.whatsappMsg(refCode)
   )}`;
 
   const copyRefCode = async () => {
@@ -69,10 +90,10 @@ export default function ThankYou({ refCode, navigate }: ThankYouProps) {
               <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-dark-blue" />
             </div>
             <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3 sm:mb-4">
-              Thank You &mdash; Your Match is on the Way!
+              {content.heading}
             </h1>
             <p className="text-grey text-base sm:text-lg leading-relaxed max-w-lg mx-auto">
-              Our team is already working to find the best agencies for you.
+              {content.subtitle}
             </p>
           </div>
 
@@ -110,11 +131,11 @@ export default function ThankYou({ refCode, navigate }: ThankYouProps) {
               </li>
               <li className="flex gap-3 sm:gap-4">
                 <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-dark-blue text-white text-xs sm:text-sm font-semibold flex items-center justify-center">2</span>
-                <span className="text-grey text-sm sm:text-base pt-0.5">Our team reviews your details and matches you to 2-3 expert agencies.</span>
+                <span className="text-grey text-sm sm:text-base pt-0.5">{content.step2}</span>
               </li>
               <li className="flex gap-3 sm:gap-4">
                 <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-dark-blue text-white text-xs sm:text-sm font-semibold flex items-center justify-center">3</span>
-                <span className="text-grey text-sm sm:text-base pt-0.5">Expect a personalized intro via email or phone within 48 hours.</span>
+                <span className="text-grey text-sm sm:text-base pt-0.5">{content.step3}</span>
               </li>
             </ol>
           </div>
@@ -129,13 +150,13 @@ export default function ThankYou({ refCode, navigate }: ThankYouProps) {
               and fast-track your agency match.
             </p>
             <a
-              href="https://calendly.com/calvia-realestate/consultation"
+              href="https://calendly.com/office-calviagroup/calvia-realestate-consulting"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-dark-blue font-semibold rounded-lg text-sm sm:text-base transition-all duration-300 hover:bg-beige hover:-translate-y-0.5 active:scale-[0.98]"
             >
               <CalendarClock className="w-4 h-4 sm:w-5 sm:h-5" />
-              Book Free Consultation
+              {content.consultCta}
             </a>
           </div>
 

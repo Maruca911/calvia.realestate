@@ -19,6 +19,7 @@
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Calvia Real Estate" />
     <meta name="twitter:image" content="https://images.pexels.com/photos/1007796/pexels-photo-1007796.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop" />
+    <link rel="preconnect" href="https://images.pexels.com" />
     <link rel="preload" as="image" href="https://images.pexels.com/photos/1007796/pexels-photo-1007796.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,11 +30,24 @@
       "@type": "RealEstateAgent",
       "name": "Calvia Real Estate",
       "url": "https://www.calvia.realestate",
-      "description": "Instant expert connections for property buyers and home owners in Calvià, Mallorca.",
+      "description": "Instant expert connections for property buyers and home owners in Calvia, Mallorca. Free matching service connecting buyers and sellers with vetted local estate agencies.",
       "areaServed": {
         "@type": "Place",
-        "name": "Calvià, Mallorca, Spain"
-      }
+        "name": "Calvia, Mallorca, Spain",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Calvia",
+          "addressRegion": "Balearic Islands",
+          "addressCountry": "ES"
+        }
+      },
+      "sameAs": [
+        "https://calvia.app",
+        "https://calvia.group"
+      ],
+      "knowsLanguage": ["en", "de", "es"],
+      "serviceType": "Property Matching",
+      "priceRange": "Free"
     }
     </script>
   </head>

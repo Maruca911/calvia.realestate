@@ -14,7 +14,7 @@ interface HomePageProps {
 
 export default function HomePage({ navigate }: HomePageProps) {
   const { ref: blogRef, isVisible: blogVisible } = useScrollReveal(0.05);
-  const featured = blogPosts.slice(0, 3);
+  const featured = blogPosts.slice(-3).reverse();
 
   return (
     <>

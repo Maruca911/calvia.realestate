@@ -14,21 +14,31 @@ import MobileCTA from './components/MobileCTA';
 export default function App() {
   const { route, navigate } = useRouter();
   const [refCode, setRefCode] = useState('');
+  const [leadType, setLeadType] = useState<'buyer' | 'seller'>('buyer');
 
-  const handleComplete = (code: string) => {
+  const handleBuyerComplete = (code: string) => {
     setRefCode(code);
-    navigate('/thank-you');
+    setLeadType('buyer');
+    navigate('/thank-you/buyer');
+  };
+
+  const handleSellerComplete = (code: string) => {
+    setRefCode(code);
+    setLeadType('seller');
+    navigate('/thank-you/seller');
   };
 
   const blogSlug = route.startsWith('/blog/') ? route.slice(6) : null;
+  const isThankYou = route === '/thank-you' || route === '/thank-you/buyer' || route === '/thank-you/seller';
+  const thankYouType = route === '/thank-you/seller' ? 'seller' : route === '/thank-you/buyer' ? 'buyer' : leadType;
 
   return (
     <div className="font-montserrat">
       <Navigation route={route} navigate={navigate} />
       {route === '/' && <HomePage navigate={navigate} />}
-      {route === '/buyers' && <BuyerPage onComplete={handleComplete} navigate={navigate} />}
-      {route === '/sellers' && <SellerPage onComplete={handleComplete} navigate={navigate} />}
-      {route === '/thank-you' && <ThankYou refCode={refCode} navigate={navigate} />}
+      {route === '/buyers' && <BuyerPage onComplete={handleBuyerComplete} navigate={navigate} />}
+      {route === '/sellers' && <SellerPage onComplete={handleSellerComplete} navigate={navigate} />}
+      {isThankYou && <ThankYou refCode={refCode} leadType={thankYouType} navigate={navigate} />}
       {route === '/blog' && <BlogPage navigate={navigate} />}
       {blogSlug && <BlogPostPage slug={blogSlug} navigate={navigate} />}
       <WhatsAppButton />

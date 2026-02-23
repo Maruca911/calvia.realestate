@@ -56,14 +56,14 @@ export default function Hero({ navigate }: HeroProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Serra de Tramuntana Mallorca property hero">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        role="img"
-        aria-label="Aerial view of Valldemossa and the Serra de Tramuntana mountains in Mallorca with traditional stone buildings and Mediterranean landscape"
-        style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1007796/pexels-photo-1007796.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)',
-        }}
-      >
+      <div className="absolute inset-0">
+        <img
+          src="https://images.pexels.com/photos/1007796/pexels-photo-1007796.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          alt="Aerial view of Valldemossa and the Serra de Tramuntana mountains in Mallorca with traditional stone buildings and Mediterranean landscape"
+          className="w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-blue/60 via-dark-blue/40 to-dark-blue/70" />
       </div>
 

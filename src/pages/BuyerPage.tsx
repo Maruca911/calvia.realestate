@@ -46,7 +46,7 @@ const CONFIG: LeadPageConfig = {
   faqSubtitle: 'Everything you need to know about buying or renting property in Calvia, Mallorca.',
   faqs: buyerFaqs,
   faqSchemaId: 'buyer',
-  blogSlugs: ['lex-beckham-ruling-mallorca', 'buying-property-bendinat-guide', 'buying-villas-calvia-mallorca'],
+  blogSlugs: ['lex-beckham-ruling-guide', 'bendinat-real-estate-guide', 'villas-calvia-mallorca-guide'],
   pageMeta: {
     title: 'Buy or Rent Property in Calvia, Mallorca | Property Matching | Calvia Real Estate',
     description: 'Looking to buy or rent property in Calvia, Mallorca? Share your criteria and get matched to the best local estate agencies instantly. Villas, apartments, fincas in Bendinat, Santa Ponsa, Son Vida and more.',

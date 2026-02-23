@@ -24,3 +24,4 @@ User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://www.calvia.realestate/sitemap.xml
+LLMs: https://www.calvia.realestate/llms.txt

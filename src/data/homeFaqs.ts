@@ -41,4 +41,24 @@ export const homeFaqs: FAQItem[] = [
     question: 'How does Calvia compare to other areas of Mallorca for property investment?',
     answer: 'Calvia consistently ranks among the top three municipalities in Mallorca for property price appreciation. Average prices per square metre are between 4,500 and 8,000 euros depending on the village, with premium locations like Son Vida and Bendinat exceeding 10,000 euros per square metre. Compared to Palma (higher density, less green space) and the northeast (more rural, longer airport transfers), Calvia offers a balance of lifestyle, accessibility, and investment stability that appeals to both end-users and investors.',
   },
+  {
+    question: 'What happens if I am not satisfied with the agency match?',
+    answer: 'If the initial agency introduction does not feel right, let us know via WhatsApp or email and we will re-evaluate your criteria and suggest alternative agencies from our network. There is no obligation to work with any agency we introduce. Our goal is a productive long-term match, not a forced introduction. In rare cases where a specialist requirement cannot be met within our current network, we will be transparent about that and recommend other avenues.',
+  },
+  {
+    question: 'Can I use your service for commercial property in Calvia?',
+    answer: 'Our primary focus is residential property — homes, apartments, villas, and land for private use. We do not currently specialise in commercial property such as offices, retail units, or hotel developments. However, if your commercial enquiry relates to a mixed-use project or a property that could serve both residential and commercial purposes (for example, a finca conversion), reach out via WhatsApp and we will advise whether our network can assist.',
+  },
+  {
+    question: 'Do you work with property developers and new-build projects?',
+    answer: 'Yes. Several agencies in our network have direct relationships with established developers building in the Calvia municipality, including projects in Santa Ponsa, Sol de Mallorca, and Son Vida. If you are interested in off-plan purchases or new-build villas, mention this in your buyer form and we will prioritise agencies with access to developer stock and pre-launch pricing.',
+  },
+  {
+    question: 'What is the difference between your service and a traditional estate agent?',
+    answer: 'A traditional estate agent works for the seller, listing and marketing specific properties for a commission. Calvia Real Estate does not list, market, or sell any properties directly. Instead, we act as an independent matching layer that connects you to the right agent based on your unique requirements. For buyers, this means access to multiple agencies without contacting each one individually. For sellers, it means your property is channelled to the agent most likely to have qualified buyers in your segment.',
+  },
+  {
+    question: 'Do I need to be physically in Mallorca to use your service?',
+    answer: 'No. The entire process is designed to work remotely. You submit your form online, receive agency introductions by email or WhatsApp, and can conduct initial consultations via video call. Many international buyers complete the matching process and even arrange initial viewings before arriving in Mallorca. For sellers, your matched agency can conduct a valuation visit and begin marketing while you coordinate remotely. When it comes time to sign, a Spanish lawyer can represent you via power of attorney if needed.',
+  },
 ];
