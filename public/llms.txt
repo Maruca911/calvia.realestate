@@ -1,0 +1,38 @@
+# Calvia Real Estate
+> Free property matching service for buyers and sellers in Calvia, Mallorca
+
+## About
+Calvia Real Estate connects property buyers and home owners with vetted local estate agencies across the Calvia municipality in southwest Mallorca, Spain. The service is free for end users. We cover Bendinat, Portals Nous, Illetes, Santa Ponsa, Palmanova, Son Vida, Sol de Mallorca, Costa den Blanes, Costa de la Calma, Paguera, and Calvia Village.
+
+## Main Pages
+- Home: https://www.calvia.realestate/
+- Buyers: https://www.calvia.realestate/#/buyers
+- Sellers: https://www.calvia.realestate/#/sellers
+- Blog: https://www.calvia.realestate/#/blog
+
+## Blog Posts
+- Bendinat Real Estate Guide: https://www.calvia.realestate/#/blog/bendinat-real-estate-guide
+- Costa den Blanes Property Guide: https://www.calvia.realestate/#/blog/costa-den-blanes-property-guide
+- Son Vida Real Estate Guide: https://www.calvia.realestate/#/blog/son-vida-real-estate-guide
+- Palmanova Real Estate Guide: https://www.calvia.realestate/#/blog/palmanova-real-estate-guide
+- Santa Ponsa Property Guide: https://www.calvia.realestate/#/blog/santa-ponsa-property-guide
+- Lex Beckham Ruling Guide: https://www.calvia.realestate/#/blog/lex-beckham-ruling-guide
+- UK Immigration to Spain Guide: https://www.calvia.realestate/#/blog/uk-immigration-spain-guide
+- Notaries in Calvia Guide: https://www.calvia.realestate/#/blog/notaries-calvia-guide
+- Short-term Renting Regulations: https://www.calvia.realestate/#/blog/short-term-renting-regulations-guide
+- Airbnb Rules in Calvia: https://www.calvia.realestate/#/blog/airbnb-rules-calvia-guide
+- New Developments in Calvia: https://www.calvia.realestate/#/blog/new-developments-calvia-guide
+- Villas in Calvia: https://www.calvia.realestate/#/blog/villas-calvia-mallorca-guide
+- Apartments in Calvia: https://www.calvia.realestate/#/blog/apartments-calvia-guide
+- Second Homes in Calvia: https://www.calvia.realestate/#/blog/second-homes-calvia-guide
+- Agencies & Notaries in Calvia: https://www.calvia.realestate/#/blog/agencies-notaries-calvia-guide
+- Golden Visa Alternatives 2026: https://www.calvia.realestate/#/blog/golden-visa-ended-spain-calvia-alternatives-2026
+- Cost of Living in Calvia 2026: https://www.calvia.realestate/#/blog/cost-of-living-calvia-mallorca-2026
+
+## Key Information
+- Location: Calvia municipality, Mallorca, Balearic Islands, Spain
+- Languages: English, German, Spanish
+- Service: Free property matching (buyers and sellers)
+- Response time: Within 24-48 hours
+- Contact: WhatsApp available on all pages
+- Parent company: calvia.group

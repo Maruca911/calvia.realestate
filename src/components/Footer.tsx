@@ -1,4 +1,5 @@
 import { MapPin, ExternalLink } from 'lucide-react';
+import { openCookiePreferences } from './CookieBanner';
 import type { Route } from '../hooks/useRouter';
 
 interface FooterProps {
@@ -13,9 +14,9 @@ export default function Footer({ navigate }: FooterProps) {
 
   return (
     <footer className="bg-dark-blue text-white">
-      <div className="max-w-6xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-12">
-          <div className="md:col-span-1">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-8 mb-10 sm:mb-12">
+          <div className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-5 h-5 text-white/80" />
               <span className="font-bold text-lg">Calvia Real Estate</span>
@@ -65,13 +66,13 @@ export default function Footer({ navigate }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#/blog/notaries-calvia-property" onClick={handleNav('/blog/notaries-calvia-property')} className="text-sm text-white/60 hover:text-white transition-colors">
-                  Notaries in Calvia
+                <a href="#/blog/golden-visa-ended-spain-calvia-alternatives-2026" onClick={handleNav('/blog/golden-visa-ended-spain-calvia-alternatives-2026')} className="text-sm text-white/60 hover:text-white transition-colors">
+                  Golden Visa Alternatives
                 </a>
               </li>
               <li>
-                <a href="#/blog/best-agencies-notaries-calvia" onClick={handleNav('/blog/best-agencies-notaries-calvia')} className="text-sm text-white/60 hover:text-white transition-colors">
-                  Best Agencies & Notaries
+                <a href="#/blog/cost-of-living-calvia-mallorca-2026" onClick={handleNav('/blog/cost-of-living-calvia-mallorca-2026')} className="text-sm text-white/60 hover:text-white transition-colors">
+                  Cost of Living in Calvia
                 </a>
               </li>
             </ul>
@@ -80,6 +81,17 @@ export default function Footer({ navigate }: FooterProps) {
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-4">Useful Resources</h4>
             <ul className="space-y-2.5">
+              <li>
+                <a
+                  href="https://calvia.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1"
+                >
+                  Calvia App
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
               <li>
                 <a
                   href="https://calvia.group"
@@ -103,34 +115,20 @@ export default function Footer({ navigate }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.registradores.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1"
+                <button
+                  onClick={openCookiePreferences}
+                  className="text-sm text-white/60 hover:text-white transition-colors"
                 >
-                  Spanish Land Registry
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://sede.agenciatributaria.gob.es"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1"
-                >
-                  Spanish Tax Agency
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                  Cookie Settings
+                </button>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-white/10 pt-6 sm:pt-8 space-y-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex flex-col sm:flex-row items-center gap-3 text-sm text-white/50">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-xs sm:text-sm text-white/50">
               <span>&copy; {new Date().getFullYear()} Calvia Real Estate</span>
               <span className="hidden sm:inline">&middot;</span>
               <a
@@ -147,6 +145,19 @@ export default function Footer({ navigate }: FooterProps) {
               We only share your information with partner agencies relevant to your enquiry.
             </p>
           </div>
+          <p className="text-[10px] sm:text-xs text-white/30 text-center leading-relaxed">
+            Portions of this website's content, including blog articles and property descriptions,
+            were generated or assisted by artificial intelligence and reviewed by our editorial team.
+            For personalised advice, always consult a qualified professional.
+            <a
+              href="https://calvia.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-white/60 transition-colors ml-1"
+            >
+              calvia.app
+            </a>
+          </p>
         </div>
       </div>
     </footer>

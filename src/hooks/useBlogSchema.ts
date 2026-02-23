@@ -12,30 +12,56 @@ export function useBlogSchema(post: BlogPost | undefined) {
     const schema = document.createElement('script');
     schema.id = schemaId;
     schema.type = 'application/ld+json';
-    schema.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: post.title,
-      description: post.metaDescription,
-      image: post.featuredImage,
-      datePublished: post.publishDate,
-      dateModified: post.publishDate,
-      author: {
-        '@type': 'Organization',
-        name: 'Calvia Real Estate',
-        url: 'https://www.calvia.realestate',
+    schema.textContent = JSON.stringify([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description: post.metaDescription,
+        image: post.featuredImage,
+        datePublished: post.publishDate,
+        dateModified: post.publishDate,
+        author: {
+          '@type': 'Organization',
+          name: 'Calvia Real Estate',
+          url: 'https://www.calvia.realestate',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Calvia Real Estate',
+          url: 'https://www.calvia.realestate',
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://www.calvia.realestate/#/blog/${post.slug}`,
+        },
+        keywords: post.focusKeyword,
       },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Calvia Real Estate',
-        url: 'https://www.calvia.realestate',
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.calvia.realestate',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://www.calvia.realestate/#/blog',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: post.title,
+            item: `https://www.calvia.realestate/#/blog/${post.slug}`,
+          },
+        ],
       },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `https://www.calvia.realestate/#/blog/${post.slug}`,
-      },
-      keywords: post.focusKeyword,
-    });
+    ]);
     document.head.appendChild(schema);
 
     return () => {

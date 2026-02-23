@@ -4,6 +4,7 @@ import { TextInput, SelectInput, RangeSlider, CheckboxGroup, RadioGroup, Textare
 import { VILLAGES, PROPERTY_TYPES, SELLER_FEATURES, SELLER_TIMELINES, LISTING_PURPOSES, RENTAL_TIMELINES } from '../utils/constants';
 import { validateSellerStep1, validateSellerStep2, validateSellerStep3 } from '../utils/validation';
 import { supabase } from '../lib/supabase';
+import { submitSellerToHubSpot } from '../lib/hubspot';
 
 interface SellerSectionProps {
   onComplete: (refCode: string) => void;
@@ -74,6 +75,15 @@ export default function SellerSection({ onComplete }: SellerSectionProps) {
       .maybeSingle();
 
     if (error) return null;
+
+    submitSellerToHubSpot({
+      name, email, phone, village,
+      propertyType: propertyType.join(', '),
+      purpose: listingPurpose,
+      price: String(isSale ? askingPrice : isLongTerm ? monthlyRent : nightlyRate),
+      timeline, features: features.join(', '), notes,
+    }).catch(() => {});
+
     return data?.ref_code || '';
   };
 

@@ -4,6 +4,7 @@ import { TextInput, SelectInput, RangeSlider, CheckboxGroup, RadioGroup, Textare
 import { VILLAGES, PROPERTY_TYPES, BUYER_FEATURES, TIMELINES, BUYER_INTENTS } from '../utils/constants';
 import { validateBuyerStep1, validateBuyerStep2, validateBuyerStep3 } from '../utils/validation';
 import { supabase } from '../lib/supabase';
+import { submitBuyerToHubSpot } from '../lib/hubspot';
 
 interface BuyerSectionProps {
   onComplete: (refCode: string) => void;
@@ -58,6 +59,14 @@ export default function BuyerSection({ onComplete }: BuyerSectionProps) {
       .maybeSingle();
 
     if (error) return null;
+
+    submitBuyerToHubSpot({
+      name, email, phone, village, intent,
+      propertyType: propertyType.join(', '),
+      budget: String(isBuy ? budget : monthlyBudget),
+      timeline, features: features.join(', '), notes,
+    }).catch(() => {});
+
     return data?.ref_code || '';
   };
 
