@@ -4,7 +4,7 @@ import { TextInput, SelectInput, RangeSlider, CheckboxGroup, RadioGroup, Textare
 import { VILLAGES, PROPERTY_TYPES, BUYER_FEATURES, TIMELINES, BUYER_INTENTS } from '../utils/constants';
 import { validateBuyerStep1, validateBuyerStep2, validateBuyerStep3 } from '../utils/validation';
 import { supabase } from '../lib/supabase';
-import { submitBuyerToHubSpot } from '../lib/hubspot';
+import { submitBuyerStepToHubSpot } from '../lib/hubspot';
 
 interface BuyerSectionProps {
   onComplete: (refCode: string) => void;
@@ -39,10 +39,19 @@ export default function BuyerSection({ onComplete }: BuyerSectionProps) {
   const isBuy = intent === 'Buy';
   const isRent = intent === 'Long-term Rental' || intent === 'Short-term Rental';
 
+  const getAllData = () => ({
+    name, email, phone, village, intent, propertyType, features,
+    timeline, notes, budget, monthlyBudget,
+  });
+
   const validateStep = (step: number) => {
     if (step === 0) return validateBuyerStep1({ name, email, phone, village, intent });
     if (step === 1) return validateBuyerStep2({ propertyType, timeline, intent, budget, monthlyBudget });
     return validateBuyerStep3({ consent });
+  };
+
+  const handleStepChange = (completedStep: number) => {
+    submitBuyerStepToHubSpot(completedStep, getAllData()).catch(() => {});
   };
 
   const handleSubmit = async () => {
@@ -52,22 +61,21 @@ export default function BuyerSection({ onComplete }: BuyerSectionProps) {
     if (isBuy) details.budget = budget;
     else details.monthlyBudget = monthlyBudget;
 
-    const { data, error } = await supabase
-      .from('leads')
-      .insert({ type: 'buyer', details })
-      .select('ref_code')
-      .maybeSingle();
+    try {
+      const { data, error } = await supabase
+        .from('leads')
+        .insert({ type: 'buyer', details })
+        .select('ref_code')
+        .maybeSingle();
 
-    if (error) return null;
+      if (error) return null;
 
-    submitBuyerToHubSpot({
-      name, email, phone, village, intent,
-      propertyType: propertyType.join(', '),
-      budget: String(isBuy ? budget : monthlyBudget),
-      timeline, features: features.join(', '), notes,
-    }).catch(() => {});
+      submitBuyerStepToHubSpot(2, getAllData()).catch(() => {});
 
-    return data?.ref_code || '';
+      return data?.ref_code || '';
+    } catch {
+      return null;
+    }
   };
 
   return (
@@ -76,6 +84,7 @@ export default function BuyerSection({ onComplete }: BuyerSectionProps) {
       validateStep={validateStep}
       onSubmit={handleSubmit}
       onComplete={onComplete}
+      onStepChange={handleStepChange}
     >
       {(step, errors) => (
         <>

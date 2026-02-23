@@ -8,6 +8,7 @@ interface FormWizardProps {
   validateStep: (step: number) => ValidationError[];
   onSubmit: () => Promise<string | null>;
   onComplete: (refCode: string) => void;
+  onStepChange?: (completedStep: number) => void;
   submitLabel?: string;
   cardClassName?: string;
   children: (step: number, errors: Record<string, string>) => ReactNode;
@@ -24,6 +25,7 @@ export default function FormWizard({
   validateStep,
   onSubmit,
   onComplete,
+  onStepChange,
   submitLabel = 'Get Matched',
   cardClassName = '',
   children,
@@ -41,6 +43,7 @@ export default function FormWizard({
       return;
     }
     setErrors({});
+    onStepChange?.(step);
     setStep((s) => s + 1);
   };
 

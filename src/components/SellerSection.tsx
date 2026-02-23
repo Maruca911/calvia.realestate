@@ -4,7 +4,7 @@ import { TextInput, SelectInput, RangeSlider, CheckboxGroup, RadioGroup, Textare
 import { VILLAGES, PROPERTY_TYPES, SELLER_FEATURES, SELLER_TIMELINES, LISTING_PURPOSES, RENTAL_TIMELINES } from '../utils/constants';
 import { validateSellerStep1, validateSellerStep2, validateSellerStep3 } from '../utils/validation';
 import { supabase } from '../lib/supabase';
-import { submitSellerToHubSpot } from '../lib/hubspot';
+import { submitSellerStepToHubSpot } from '../lib/hubspot';
 
 interface SellerSectionProps {
   onComplete: (refCode: string) => void;
@@ -49,10 +49,20 @@ export default function SellerSection({ onComplete }: SellerSectionProps) {
   const isShortTerm = listingPurpose === 'Short-term Rental';
   const isRental = isLongTerm || isShortTerm;
 
+  const getAllData = () => ({
+    name, email, phone, village, address, listingPurpose, propertyType,
+    size, features, askingPrice, monthlyRent, nightlyRate, hasEtvLicence,
+    timeline, notes,
+  });
+
   const validateStep = (step: number) => {
     if (step === 0) return validateSellerStep1({ name, email, phone, village, listingPurpose });
     if (step === 1) return validateSellerStep2({ propertyType, askingPrice, monthlyRent, nightlyRate, listingPurpose });
     return validateSellerStep3({ timeline, consent });
+  };
+
+  const handleStepChange = (completedStep: number) => {
+    submitSellerStepToHubSpot(completedStep, getAllData()).catch(() => {});
   };
 
   const handleSubmit = async () => {
@@ -68,23 +78,21 @@ export default function SellerSection({ onComplete }: SellerSectionProps) {
       details.hasEtvLicence = hasEtvLicence.length > 0;
     }
 
-    const { data, error } = await supabase
-      .from('leads')
-      .insert({ type: 'seller', details })
-      .select('ref_code')
-      .maybeSingle();
+    try {
+      const { data, error } = await supabase
+        .from('leads')
+        .insert({ type: 'seller', details })
+        .select('ref_code')
+        .maybeSingle();
 
-    if (error) return null;
+      if (error) return null;
 
-    submitSellerToHubSpot({
-      name, email, phone, village,
-      propertyType: propertyType.join(', '),
-      purpose: listingPurpose,
-      price: String(isSale ? askingPrice : isLongTerm ? monthlyRent : nightlyRate),
-      timeline, features: features.join(', '), notes,
-    }).catch(() => {});
+      submitSellerStepToHubSpot(2, getAllData()).catch(() => {});
 
-    return data?.ref_code || '';
+      return data?.ref_code || '';
+    } catch {
+      return null;
+    }
   };
 
   const timelineOptions = isRental ? RENTAL_TIMELINES : SELLER_TIMELINES;
@@ -96,6 +104,7 @@ export default function SellerSection({ onComplete }: SellerSectionProps) {
       validateStep={validateStep}
       onSubmit={handleSubmit}
       onComplete={onComplete}
+      onStepChange={handleStepChange}
       cardClassName="border border-beige-dark/50"
     >
       {(step, errors) => (
