@@ -55,6 +55,8 @@ export default function BuyerSection({ onComplete }: BuyerSectionProps) {
   };
 
   const handleSubmit = async () => {
+    if (!supabase) return null;
+
     const details: Record<string, unknown> = {
       name, email, phone, village, intent, propertyType, features, timeline, notes,
     };
@@ -68,12 +70,16 @@ export default function BuyerSection({ onComplete }: BuyerSectionProps) {
         .select('ref_code')
         .maybeSingle();
 
-      if (error) return null;
+      if (error) {
+        console.error('Supabase insert error:', error.message, error.code, error.details);
+        return null;
+      }
 
       submitBuyerStepToHubSpot(2, getAllData()).catch(() => {});
 
       return data?.ref_code || '';
-    } catch {
+    } catch (err) {
+      console.error('Form submission error:', err);
       return null;
     }
   };
