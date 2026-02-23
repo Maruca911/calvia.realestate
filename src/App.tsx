@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from './hooks/useRouter';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
@@ -10,21 +10,28 @@ import ThankYou from './components/ThankYou';
 import WhatsAppButton from './components/WhatsAppButton';
 import CookieBanner from './components/CookieBanner';
 import MobileCTA from './components/MobileCTA';
+import { trackPageView, trackEvent } from './lib/analytics';
 
 export default function App() {
   const { route, navigate } = useRouter();
   const [refCode, setRefCode] = useState('');
   const [leadType, setLeadType] = useState<'buyer' | 'seller'>('buyer');
 
+  useEffect(() => {
+    trackPageView(route);
+  }, [route]);
+
   const handleBuyerComplete = (code: string) => {
     setRefCode(code);
     setLeadType('buyer');
+    trackEvent('generate_lead', { lead_type: 'buyer', ref_code: code });
     navigate('/thank-you/buyer');
   };
 
   const handleSellerComplete = (code: string) => {
     setRefCode(code);
     setLeadType('seller');
+    trackEvent('generate_lead', { lead_type: 'seller', ref_code: code });
     navigate('/thank-you/seller');
   };
 

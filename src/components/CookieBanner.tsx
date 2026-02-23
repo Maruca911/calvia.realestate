@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Shield, X, Settings } from 'lucide-react';
+import { initGA } from '../lib/analytics';
 
 interface ConsentState {
   essential: boolean;
@@ -52,10 +53,12 @@ export default function CookieBanner() {
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
+    if (existing.analytics) initGA();
   }, []);
 
   const handleAcceptAll = () => {
     saveConsent({ essential: true, analytics: true, marketing: true, timestamp: new Date().toISOString() });
+    initGA();
     setVisible(false);
   };
 
@@ -66,6 +69,7 @@ export default function CookieBanner() {
 
   const handleSavePreferences = () => {
     saveConsent({ essential: true, analytics, marketing, timestamp: new Date().toISOString() });
+    if (analytics) initGA();
     setVisible(false);
   };
 

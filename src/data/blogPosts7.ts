@@ -14,7 +14,7 @@ export const blogPosts7: BlogPost[] = [
     content: `
 <h2>Why School Choice Drives Property Decisions in Calvia</h2>
 <p>For families relocating to Mallorca, the choice of school is often the single most important factor in deciding where to live. Calvia's position in the southwest of the island gives it excellent access to the highest concentration of international schools in the Balearic Islands. Many of these schools are located within or immediately adjacent to the municipality, meaning families can find properties within a 10 to 20 minute school run across multiple villages.</p>
-<p>Importantly, proximity to top-rated international schools has a measurable impact on property values. Estates within the catchment areas of schools like Baleares International College or Agora Portals International School consistently command a 5 to 15% premium compared to equivalent properties further afield. This makes understanding the school landscape essential not just for families but for investors evaluating long-term demand drivers.</p>
+<p>Importantly, proximity to top-rated international schools has a measurable impact on property values. Estates within the catchment areas of schools like Baleares International College or <a href="https://www.agoraportals.es/en/" target="_blank" rel="noopener noreferrer">Agora Portals International School</a> consistently command a 5 to 15% premium compared to equivalent properties further afield. This makes understanding the school landscape essential not just for families but for investors evaluating long-term demand drivers. For a broader view of running costs including school fees, see our <a href="#/blog/cost-of-living-calvia-mallorca-2026">cost of living guide</a>.</p>
 
 <h2>Baleares International College (BIC)</h2>
 <p>Located in Sa Porrassa, directly within the Calvia municipality between Magaluf and Palmanova, BIC is one of the most established international schools on the island. It follows the <strong>British National Curriculum</strong> from Early Years through to A-Levels (Sixth Form), making it a natural choice for British families and those seeking a UK-style education.</p>
@@ -40,7 +40,7 @@ export const blogPosts7: BlogPost[] = [
 <li>Facilities: Olympic-size swimming pool, music conservatory, robotics lab, theatre</li>
 <li>Nearest villages: Portals Nous (3 min), Bendinat (5 min), Costa den Blanes (7 min)</li>
 </ul>
-<p>The IB Diploma is increasingly valued by European and American universities, making Agora an excellent choice for families who may relocate internationally again or who want their children to have maximum university flexibility. The school's location in Portals Nous also means it draws heavily from the Bendinat and Son Vida communities.</p>
+<p>The IB Diploma is increasingly valued by European and American universities, making Agora an excellent choice for families who may relocate internationally again or who want their children to have maximum university flexibility. The school's location in Portals Nous also means it draws heavily from the <a href="#/blog/bendinat-real-estate-guide">Bendinat</a> and <a href="#/blog/son-vida-real-estate-guide">Son Vida</a> communities.</p>
 
 <h2>King Richard III College</h2>
 <p>One of the oldest British schools in Mallorca, King Richard III is located in Portals Nous and has been operating since 1986. It follows the <strong>British curriculum</strong> with IGCSEs and A-Levels, and is known for its small class sizes and family atmosphere.</p>
@@ -66,7 +66,7 @@ export const blogPosts7: BlogPost[] = [
 </ul>
 
 <h2>Deutsche Schule Mallorca (German School)</h2>
-<p>For German-speaking families, the Deutsche Schule in Palma offers the <strong>German curriculum</strong> leading to the Abitur. Given the large German expat community in Calvia (particularly in Santa Ponsa, Paguera, and Costa de la Calma), many families choose this school despite the 25 to 35 minute commute from western Calvia villages.</p>
+<p>For German-speaking families, the <a href="https://www.dsmallorca.de" target="_blank" rel="noopener noreferrer">Deutsche Schule</a> in Palma offers the <strong>German curriculum</strong> leading to the Abitur. Given the large German expat community in Calvia (particularly in <a href="#/blog/santa-ponsa-property-guide">Santa Ponsa</a>, Paguera, and Costa de la Calma), many families choose this school despite the 25 to 35 minute commute from western Calvia villages.</p>
 <p><strong>Key facts:</strong></p>
 <ul>
 <li>Ages: 3 to 18 years</li>
@@ -81,8 +81,8 @@ export const blogPosts7: BlogPost[] = [
 <p>The quality of public education in Calvia is generally good, though class sizes tend to be larger (25 to 30 students) and the language transition can be challenging for children who do not speak Spanish or Catalan.</p>
 
 <h2>How School Proximity Affects Property Values</h2>
-<p>Our data shows that properties within a 10-minute drive of BIC, Agora, or King Richard III consistently attract higher demand from family buyers. Villages like Portals Nous, Bendinat, and Palmanova benefit directly from their proximity to multiple schools. Santa Ponsa is increasingly popular for families due to its combination of school access, amenities, and relatively affordable pricing compared to Bendinat.</p>
-<p>If you are relocating with children and want help finding a property near the right school, <strong>submit your buyer form</strong> and mention your school preference in the notes field. We will match you to agencies who specialise in family relocations and understand the school catchment dynamics.</p>
+<p>Our data shows that properties within a 10-minute drive of BIC, Agora, or King Richard III consistently attract higher demand from family buyers. Villages like Portals Nous, Bendinat, and <a href="#/blog/palmanova-real-estate-guide">Palmanova</a> benefit directly from their proximity to multiple schools. <a href="#/blog/santa-ponsa-property-guide">Santa Ponsa</a> is increasingly popular for families due to its combination of school access, amenities, and relatively affordable pricing compared to Bendinat. For UK families navigating the post-Brexit relocation process, our <a href="#/blog/uk-immigration-spain-guide">UK immigration to Spain guide</a> covers visa requirements in detail.</p>
+<p>If you are relocating with children and want help finding a property near the right school, <strong><a href="#/buyers">submit your buyer form</a></strong> and mention your school preference in the notes field. We will match you to agencies who specialise in family relocations and understand the school catchment dynamics. Home owners considering selling a family property near a school can <strong><a href="#/sellers">start a seller enquiry here</a></strong>.</p>
 `,
   },
   {
@@ -97,7 +97,7 @@ export const blogPosts7: BlogPost[] = [
     publishDate: '2026-02-22',
     content: `
 <h2>Why Property Management Matters in Calvia</h2>
-<p>Owning a second home in Mallorca is a lifestyle investment, but it also comes with practical responsibilities. Properties left unattended for months at a time are vulnerable to plumbing leaks, storm damage, pest infestations, and general deterioration. In Calvia's humid Mediterranean climate, even a well-built villa can develop issues if not regularly inspected and maintained. Professional property management ensures your investment remains in excellent condition, retains its value, and is ready for you whenever you arrive.</p>
+<p>Owning a <a href="#/blog/second-homes-calvia-guide">second home in Mallorca</a> is a lifestyle investment, but it also comes with practical responsibilities. Properties left unattended for months at a time are vulnerable to plumbing leaks, storm damage, pest infestations, and general deterioration. In Calvia's humid Mediterranean climate, even a well-built villa can develop issues if not regularly inspected and maintained. Professional property management ensures your investment remains in excellent condition, retains its value, and is ready for you whenever you arrive.</p>
 
 <h2>What Property Management Services Cover</h2>
 <p>A comprehensive property management package in Calvia typically includes the following services:</p>
@@ -121,7 +121,7 @@ export const blogPosts7: BlogPost[] = [
 <p>Many second-home owners in Calvia offset their costs by renting their property when not in use. Rental management adds a layer of complexity:</p>
 
 <h3>Short-Term Holiday Rentals (ETV Licensed)</h3>
-<p>If your property holds a valid ETV tourist licence, a rental management company will handle guest bookings, check-ins and check-outs, cleaning between guests, linen supply, platform management (Airbnb, Booking.com, Vrbo), and guest communication. Commission rates for full-service holiday rental management in Calvia range from 20 to 35% of rental income. Properties in premium locations like Bendinat, Portals Nous, and Son Vida can generate 150 to 500 euros per night in peak season (June to September), with occupancy rates of 70 to 90% during summer months.</p>
+<p>If your property holds a valid ETV tourist licence (see our <a href="#/blog/short-term-renting-regulations-guide">short-term rental regulations guide</a> and <a href="#/blog/airbnb-rules-calvia-guide">Airbnb rules in Calvia</a> for details), a rental management company will handle guest bookings, check-ins and check-outs, cleaning between guests, linen supply, platform management (Airbnb, Booking.com, Vrbo), and guest communication. Commission rates for full-service holiday rental management in Calvia range from 20 to 35% of rental income. Properties in premium locations like <a href="#/blog/bendinat-real-estate-guide">Bendinat</a>, Portals Nous, and <a href="#/blog/son-vida-real-estate-guide">Son Vida</a> can generate 150 to 500 euros per night in peak season (June to September), with occupancy rates of 70 to 90% during summer months.</p>
 
 <h3>Long-Term Rentals</h3>
 <p>For properties rented on long-term contracts (12 months or more), management fees are lower — typically one month's rent as a placement fee plus 8 to 12% of monthly rent for ongoing management. The manager handles tenant screening, contract preparation, rent collection, maintenance coordination, and legal compliance. Long-term rental yields in Calvia range from 3 to 5% gross depending on location and property type.</p>
@@ -137,7 +137,7 @@ export const blogPosts7: BlogPost[] = [
 <p>Popular insurers for second homes in Mallorca include Zurich, AXA, Mapfre, and Linea Directa. Having your property manager conduct regular documented inspections can help meet policy conditions regarding occupancy.</p>
 
 <h2>Tax Obligations for Absent Owners</h2>
-<p>Even if you do not rent your property, Spanish tax law imputes income on second homes. Non-resident owners must file an annual tax return (Modelo 210) declaring imputed income of either 1.1% or 2% of the cadastral value (depending on when the value was last revised). The tax rate is 19% for EU/EEA residents and 24% for others. For a property with a cadastral value of 300,000 euros, this could mean a tax bill of approximately 630 to 1,140 euros per year even with zero rental income.</p>
+<p>Even if you do not rent your property, Spanish tax law imputes income on second homes. Non-resident owners must file an annual tax return (Modelo 210) declaring imputed income of either 1.1% or 2% of the cadastral value (depending on when the value was last revised). The tax rate is 19% for EU/EEA residents and 24% for others. New residents may qualify for the <a href="#/blog/lex-beckham-ruling-guide">Beckham Law tax regime</a> which can significantly reduce the overall burden. For a property with a cadastral value of 300,000 euros, this could mean a tax bill of approximately 630 to 1,140 euros per year even with zero rental income.</p>
 <p>If you do rent the property, rental income is taxed separately. EU/EEA residents can deduct expenses proportionally, while non-EU residents are taxed on gross income without deductions — a significant difference that makes tax structuring important. A fiscal representative (required for all non-residents who own property in Spain) can handle these filings. Annual fiscal representative fees range from 200 to 500 euros.</p>
 
 <h2>Choosing the Right Property Manager</h2>
@@ -151,7 +151,8 @@ export const blogPosts7: BlogPost[] = [
 </ul>
 
 <h2>Next Steps</h2>
-<p>Whether you are buying a property and need to plan for management from day one, or you already own in Calvia and want to optimise your setup, our network includes agencies experienced in recommending trusted property management partners. <strong>Submit your enquiry</strong> and mention property management in your notes — we will ensure your matched agency can advise on both the purchase and the ongoing care of your investment.</p>
+<p>Whether you are buying a property and need to plan for management from day one, or you already own in Calvia and want to optimise your setup, our network includes agencies experienced in recommending trusted property management partners. For a full breakdown of monthly costs across different villages, see our <a href="#/blog/cost-of-living-calvia-mallorca-2026">cost of living guide</a>.</p>
+<p>Buyers can <strong><a href="#/buyers">submit a buyer enquiry</a></strong> and mention property management in the notes field. Existing home owners looking to sell or explore their options can <strong><a href="#/sellers">start a seller enquiry here</a></strong>. We will ensure your matched agency can advise on both the transaction and the ongoing care of your investment.</p>
 `,
   },
 ];
