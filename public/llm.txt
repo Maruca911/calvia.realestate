@@ -1,0 +1,6 @@
+# LLM pointer for Calvia Real Estate
+
+This site provides a full crawler index at:
+https://www.calvia.realestate/llms.txt
+
+Use that file as the primary machine-readable reference.
